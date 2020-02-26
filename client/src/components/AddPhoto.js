@@ -1,4 +1,4 @@
-import React, { useState, useReducer, useEffect } from 'react';
+import React, { useReducer, useEffect } from 'react';
 import axios from 'axios';
 
 export default function AddPicture() {
@@ -25,6 +25,18 @@ export default function AddPicture() {
     setPicture({[name]: newValue});
   }
 
+  const handleFileUpload = event => {
+    const uploadData = new FormData();
+    uploadData.append('imageUrl', event.target.files[0]);
+    
+    axios.post('http://localhost:5530/api/photos/upload', uploadData)
+    .then(response => {
+        console.log(response);
+        setPicture({url: response.data.secure_url})
+    })
+    .catch(err => {console.log("Error while uploading the file", err)});
+  };
+
   const handleSubmit = (e) => {
     axios.post('http://localhost:5530/api/photos/add', picture)
     .then(res => {
@@ -40,10 +52,6 @@ export default function AddPicture() {
     });
   };
 
-  // handleChange();
-
-  // handleSubmit();
-
   useEffect(() => {
     handleSubmit();
   }, [])
@@ -56,7 +64,7 @@ export default function AddPicture() {
         <label>Color: </label>
         <input type="text" name="color" value={picture.color} onChange={handleChange} />
         <label>Choose: </label>
-        <input type="file" name="url" value={picture.url} onChange={handleChange} />
+        <input type="file" name="url" onChange={handleFileUpload} />
         <label>Theme: </label>
         <input type="text" name="theme" value={picture.theme} onChange={handleChange} />
         <button type="submit">Send</button>

@@ -20,6 +20,7 @@ mongoose.connect(uri, {useNewUrlParser: true, useUnifiedTopology: true})
   .catch(err => console.log(err));
 
 app.use('/api/photos', photos);
+app.use('/api/photos', require('./routes/api/file-upload-routes'));
 
 const port = process.env.PORT || 5530;
 

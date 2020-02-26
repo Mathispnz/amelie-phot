@@ -167,7 +167,6 @@ export default function Galerie() {
 
   useEffect(() => {
     getAllPhotos();
-
   }, [])
 
   return (
