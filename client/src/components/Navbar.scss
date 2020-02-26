@@ -1,13 +1,31 @@
 .Navbar {
   padding: 15px 0px;
   background-color: white;
+
   // position: fixed;
   // top: 0;
   // z-index: 100;
   // width: 100%;
+  .Navbar_Cont {
+    margin: auto;
+    width: 100%;
+    max-width: 1200px;
+    display: flex;
+    justify-content: space-between;
+  }
+  .Navbar_Left {
+    float: left;
+  }
+  .Navbar_Right {
+    float: right;
+  }
   .Navbar-Link {
     margin: 10px 20px;
     text-decoration: none;
     color: black;
+    font-size: 14px;
+  }
+  .Link--Bold {
+    font-family: Raleway-Bold;
   }
 }

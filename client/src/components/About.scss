@@ -1,9 +1,12 @@
 .About {
+  max-width: 1200px;
+  margin: auto;
   
   .About-Para {
     text-align: left;
-    max-width: 800px;
-    margin: auto;
+    font-size: 14px;
+    max-width: 600px;
+    margin: auto 20px;
   }
   .About-Qwig {
     font-family: 'Qwigley';

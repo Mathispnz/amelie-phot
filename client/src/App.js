@@ -8,6 +8,9 @@ import Galerie from './components/Galerie';
 import Destinations from './components/Destinations';
 import About from './components/About';
 import Contact from './components/Contact';
+import Footer from './components/Footer';
+import Faune from './components/Faune';
+import AddPhoto from './components/AddPhoto';
 
 function App() {
   return (
@@ -20,9 +23,11 @@ function App() {
         <Route path="/destinations" component={Destinations} />
         <Route path="/about" component={About} />
         <Route path="/contact" component={Contact} />
+        <Route path="/add" component={AddPhoto} />
+        <Route path="/faune" component={Faune} />
       </Switch>
 
-      <footer className="Footer">Amélie Peingnez Photography</footer>
+      <Footer />
     </div>
   );
 }

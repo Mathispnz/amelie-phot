@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import './Galerie.scss';
+import axios from 'axios';
+import { Link } from 'react-router-dom';
 
 // HOOKS FOR MAPPING THROUGH IMAGES
 // PAGINATION (TRAVERSY MEDIA)
@@ -153,47 +155,73 @@ export default function Galerie() {
 
   const paginate = pageNumbers => setCurrentPage(pageNumbers);
 
-  return (
+  const getAllPhotos = () => {
+    axios.get('http://localhost:5530/api/photos')
+    .then(res => {
+      // setImages(res.data);
+    })
+    .catch(err => (
+      console.log(err)
+    ));
+  }
 
+  useEffect(() => {
+    getAllPhotos();
+
+  }, [])
+
+  return (
     <div className='Galerie'>
       <h2>Ma galerie</h2>
 
       <div className="Galerie-Theme">
-        <div   className="Galerie-Theme-One">
-          <img className="Galerie-Theme-One-Image" src={images[1].src} />
-          <h4 className="Galerie-Theme-One-Text">Faune</h4>
-        </div>
-        <div className="Galerie-Theme-One">
-          <img className="Galerie-Theme-One-Image" src={images[7].src} />
-          <h4 className="Galerie-Theme-One-Text">Flore</h4>
-        </div>
-        <div className="Galerie-Theme-One">
-          <img className="Galerie-Theme-One-Image" src={images[6].src} />
-          <h4 className="Galerie-Theme-One-Text">Terre</h4>
-        </div>
-        <div className="Galerie-Theme-One">
-          <img className="Galerie-Theme-One-Image" src={images[12].src} />
-          <h4 className="Galerie-Theme-One-Text">Mer</h4>
-        </div>
-        <div className="Galerie-Theme-One">
-          <img className="Galerie-Theme-One-Image" src={images[2].src} />
-          <h4 className="Galerie-Theme-One-Text">Ville</h4>
-        </div>
-        <div className="Galerie-Theme-One">
-          <img className="Galerie-Theme-One-Image" src={images[2].src} />
-          <h4 className="Galerie-Theme-One-Text">Portrait</h4>
-        </div>
+        <Link to="/faune">
+          <div className="Galerie-Theme-One">
+            <img className="Galerie-Theme-One-Image" src={images[1].src} />
+            <h4 className="Galerie-Theme-One-Text">Faune</h4>
+          </div>
+        </Link>
+        <Link to="/flore">
+          <div className="Galerie-Theme-One">
+            <img className="Galerie-Theme-One-Image" src={images[7].src} />
+            <h4 className="Galerie-Theme-One-Text">Flore</h4>
+          </div>
+        </Link>
+        <Link to="/terre">
+          <div className="Galerie-Theme-One">
+            <img className="Galerie-Theme-One-Image" src={images[6].src} />
+            <h4 className="Galerie-Theme-One-Text">Terre</h4>
+          </div>
+        </Link>
+        <Link to="/mer">
+          <div className="Galerie-Theme-One">
+            <img className="Galerie-Theme-One-Image" src={images[12].src} />
+            <h4 className="Galerie-Theme-One-Text">Mer</h4>
+          </div>
+        </Link>
+        <Link to="/ville">
+          <div className="Galerie-Theme-One">
+            <img className="Galerie-Theme-One-Image" src={images[2].src} />
+            <h4 className="Galerie-Theme-One-Text">Ville</h4>
+          </div>
+        </Link>
+        <Link to="/portrait">
+          <div className="Galerie-Theme-One">
+            <img className="Galerie-Theme-One-Image" src={images[2].src} />
+            <h4 className="Galerie-Theme-One-Text">Portrait</h4>
+          </div>
+        </Link>
       </div>
 
-      <ul>
+      {/* <ul>
         {currentImages.map((image, key) => (
           <li key={key}>
             <img alt="galerie-img" className='Galerie-Pic' src={image.src} />
           </li>
         ))}
-      </ul>
+      </ul> */}
 
-      <nav className="Galerie-pageCont">
+      {/* <nav className="Galerie-pageCont">
         <ul>
           {pageNumbers.map(number => (
             <li key={number}>
@@ -203,9 +231,9 @@ export default function Galerie() {
             </li>
           ))}
         </ul>
-      </nav>
+      </nav> */}
 
-      <div>
+      {/* <div>
         <h4>Green images</h4>
         <ul>
           {images.map((image, key) => (
@@ -214,7 +242,7 @@ export default function Galerie() {
             </li>
           ))}
         </ul>
-      </div>
+      </div> */}
 
     </div>
   )
