@@ -1,6 +1,39 @@
 .Home {
-
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: white;
+  z-index: 10;
+  overflow: hidden;
 }
 .Home_Background {
-  width: 80%;
+  width: 150%;
+  position: absolute;
+  top: 0;
+  left: -50%;
+}
+.Home_Container {
+  top: 50%;
+  transform: translateY(-50%);
+  margin: auto;
+  max-width: 700px;
+  position: relative;
+  color: white;
+}
+.Home_Title {
+  font-size: 40px;
+  font-family: Raleway-Bold;
+}
+.Home_Link {
+  margin: auto;
+  display: block;
+  margin-top: 20px;
+  border: 3px solid white;
+  border-radius: 3px;
+  padding: 5px 40px;
+  width: fit-content;
+  color: white;
+  text-decoration: none;
 }
