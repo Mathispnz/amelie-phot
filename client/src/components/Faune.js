@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
-import { Slide } from 'react-slideshow-image';
+import { Fade } from 'react-slideshow-image';
 
-const properties = {
+const fadeProperties = {
   duration: 3000,
   transitionDuration: 500,
   infinite: true,
@@ -27,14 +27,12 @@ export default function Faune() {
     getFaunePictures()
   }, []);
 
-  console.log(faunes);
-
   return (
     <div className="Faune">
       <h2>Faune</h2>
       
       <div className="containerSlide">
-        <Slide {...properties}>
+        <Fade {...fadeProperties}>
           {faunes.filter(faune => faune.theme === 'Faune').map((faune, key) => {
             return(
               <div key={key}>
@@ -44,7 +42,7 @@ export default function Faune() {
               </div>
             )
           })}
-        </Slide>
+        </Fade>
       </div>
     </div>
   )
