@@ -24,7 +24,8 @@ export default class Login extends Component {
 
     this.service.login(username, password)
     .then(res => {
-      this.props.getUser(res)
+      this.setState({ username: "", password: ""});
+      this.props.getUser(res);
     })
     .catch(err => console.log(err));
   }

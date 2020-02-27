@@ -5,8 +5,6 @@ const cors = require('cors');
 const session = require('express-session');
 const passport = require('passport');
 const LocalStrategy = require('passport-local').Strategy;
-const bcrypt = require('bcryptjs');
-const Admin = require('./models/Admin');
 
 const app = express();
 app.use(express.json());
@@ -36,7 +34,19 @@ passport.deserializeUser(function(id, done) {
 });
 
 passport.use(new LocalStrategy((username, password, next) => {
-
+    Admin.findOne({ username }, (err, foundUser) => {
+      if (err) {
+        next(err);
+        return;
+      }
+  
+      if (!foundUser) {
+        next(null, false, { message: 'Incorrect username.' });
+        return;
+      }
+  
+      next(null, foundUser);
+    });
 }))
 
 app.use(session({
