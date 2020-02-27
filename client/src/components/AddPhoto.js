@@ -37,7 +37,7 @@ export default function AddPicture() {
     .catch(err => {console.log("Error while uploading the file", err)});
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = (event) => {
     axios.post('http://localhost:5530/api/photos/add', picture)
     .then(res => {
       setPicture({
@@ -66,7 +66,15 @@ export default function AddPicture() {
         <label>Choose: </label>
         <input type="file" name="url" onChange={handleFileUpload} />
         <label>Theme: </label>
-        <input type="text" name="theme" value={picture.theme} onChange={handleChange} />
+        <select name="theme" value={picture.theme} onChange={handleChange}>
+          <option value=""></option>
+          <option value="Faune">Faune</option>
+          <option value="Flore">Flore</option>
+          <option value="Terre">Terre</option>
+          <option value="Mer">Mer</option>
+          <option value="Ville">Ville</option>
+          <option value="Portrait">Portrait</option>
+        </select>
         <button type="submit">Send</button>
       </form>
     </div>

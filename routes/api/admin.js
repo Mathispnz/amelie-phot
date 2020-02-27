@@ -76,8 +76,6 @@ router.post('/login', (req, res, next) => {
         //     return;
         // }
 
-        console.log(admin);
-
         req.login(admin, (err) => {
             if (err) {
                 res.status(500).json({ message: 'Session save went bad.' });
