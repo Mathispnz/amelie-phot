@@ -3,7 +3,7 @@ import './App.scss';
 import { Switch, Route } from 'react-router-dom';
 
 // Components
-import Navbar from './components/Navbar';
+import Navbar from './Navbar';
 import Home from './components/Home';
 import Galerie from './components/Galerie';
 import Destinations from './components/Destinations';
@@ -19,7 +19,7 @@ class App extends Component {
   constructor(props) {
     super(props);
 
-    this.state = {adminLoggedIn: null};
+    this.state = { adminLoggedIn: null };
     this.service = new AuthService();
   }
 
@@ -27,26 +27,27 @@ class App extends Component {
     if (this.state.adminLoggedIn === null) {
       this.service.loggedin()
       .then(res => {
-        this.setState({loggedInUser: res});
+        console.log(this.state.adminLoggedIn);
+        this.setState({adminLoggedIn: res});
       })
       .catch(err => {
-        this.setState({loggedInUser: false});
+        this.setState({adminLoggedIn: false});
       });
     }
   };
 
-  getTheUser = userObj => {
+  getTheUser = (userObj) => {
     this.setState({
-      loggedInUser: userObj
+      adminLoggedIn: userObj
     })
   };
 
   render() {
     this.fetchUser();
-    if (this.state.loggedInUser) {
+    if (this.state.adminLoggedIn) {
       return (
         <div className="App">
-          <Navbar />
+          <Navbar adminInSession={this.state.adminLoggedIn} getUser={this.getTheUser} />
     
           <Switch>
             <Route exact path="/" component={Home} />
@@ -56,7 +57,7 @@ class App extends Component {
             <Route path="/contact" component={Contact} />
             <Route path="/add" component={AddPhoto} />
             <Route path="/faune" component={Faune} />
-            <Route path="/login" component={Login} />
+            <Route path="/login" render={() => <Login getUser={this.getTheUser}/>} />
           </Switch>
     
           <Footer />
@@ -65,7 +66,7 @@ class App extends Component {
     } else {
       return (
         <div className="App">
-          <Navbar />
+          <Navbar adminInSession={this.state.adminLoggedIn} />
     
           <Switch>
             <Route exact path="/" component={Home} />
@@ -74,7 +75,7 @@ class App extends Component {
             <Route path="/about" component={About} />
             <Route path="/contact" component={Contact} />
             <Route path="/faune" component={Faune} />
-            <Route path="/login" component={Login} />
+            <Route path="/login" render={() => <Login getUser={this.getTheUser}/>} />
           </Switch>
     
           <Footer />
