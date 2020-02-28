@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, withRouter } from 'react-router-dom';
 import './Navbar.scss';
 import AuthService from './components/auth/auth-service';
 
-export default class Navbar extends Component {
+class Navbar extends Component {
   constructor(props) {
     super(props);
 
@@ -22,6 +22,7 @@ export default class Navbar extends Component {
     .then(() => {
         this.setState({ adminLoggedIn: null })
         this.props.getUser(null);
+        this.props.history.push('/');
     })
   }
 
@@ -63,3 +64,5 @@ export default class Navbar extends Component {
     }
   }
 }
+
+export default withRouter(Navbar);

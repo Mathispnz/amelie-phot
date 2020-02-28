@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import './App.scss';
-import { Switch, Route } from 'react-router-dom';
+import { Router, Switch, Route } from 'react-router-dom';
 
 // Components
 import Navbar from './Navbar';
@@ -43,25 +43,24 @@ class App extends Component {
   };
 
   render() {
-    this.fetchUser();
     if (this.state.adminLoggedIn) {
       return (
-        <div className="App">
-          <Navbar adminInSession={this.state.adminLoggedIn} getUser={this.getTheUser} />
-    
-          <Switch>
-            <Route exact path="/" component={Home} />
-            <Route path="/galerie" component={Galerie} />
-            <Route path="/destinations" component={Destinations} />
-            <Route path="/about" component={About} />
-            <Route path="/contact" component={Contact} />
-            <Route path="/add" component={AddPhoto} />
-            <Route path="/faune" component={Faune} />
-            <Route path="/login" render={() => <Login getUser={this.getTheUser}/>} />
-          </Switch>
-    
-          <Footer />
-        </div>
+          <div className="App">
+            <Navbar adminInSession={this.state.adminLoggedIn} getUser={this.getTheUser} />
+      
+            <Switch>
+              <Route exact path="/" component={Home} />
+              <Route path="/galerie" component={Galerie} />
+              <Route path="/destinations" component={Destinations} />
+              <Route path="/about" component={About} />
+              <Route path="/contact" component={Contact} />
+              <Route path="/add" component={AddPhoto} />
+              <Route path="/faune" component={Faune} />
+              <Route path="/login" render={() => <Login getUser={this.getTheUser} adminInSession={this.state.adminLoggedIn}/>} />
+            </Switch>
+      
+            <Footer />
+          </div>
       );
     } else {
       return (
