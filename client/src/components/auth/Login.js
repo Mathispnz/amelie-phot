@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 import AuthService from './auth-service';
+import { Link, Redirect } from 'react-router-dom';
 
 export default class Login extends Component {
   constructor(props) {
@@ -8,9 +9,14 @@ export default class Login extends Component {
 
     this.state = {
       username: '',
-      password: ''
+      password: '',
+      adminLoggedIn: null
     };
     this.service = new AuthService();
+  }
+
+  componentWillReceiveProps(nextProps) {
+    this.setState({...this.state, adminLoggedIn: nextProps["adminInSession"]})
   }
 
   handleChange = event => {
@@ -31,13 +37,18 @@ export default class Login extends Component {
   }
 
   render() {
+    console.log(this.state.adminLoggedIn)
+    if (this.state.adminLoggedIn) {
+      return <Redirect to="/galerie" />
+    }
+
     return (
       <div className="Login">
         <form onSubmit={e => this.handleSubmit(e)}>
           <label>Username:</label>
           <input type="text" name="username" value={this.state.username} onChange={this.handleChange} />
           <label>Password:</label>
-          <input type="text" name="password" value={this.state.password} onChange={this.handleChange} />
+          <input type="password" name="password" value={this.state.password} onChange={this.handleChange} />
           
           <button>Login</button>
         </form>
