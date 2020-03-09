@@ -16,11 +16,20 @@
   },
   "homepage": "https://github.com/Mathispnz/amelie-photography-server#readme",
   "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "cloudinary": "^1.19.0",
     "concurrently": "^5.0.0",
     "cors": "^2.8.5",
     "dotenv": "^8.2.0",
     "express": "^4.17.1",
+    "express-session": "^1.17.0",
     "mongoose": "^5.7.11",
-    "nodemon": "^1.19.4"
+    "multer": "^1.4.2",
+    "multer-storage-cloudinary": "^2.2.1",
+    "node": "^13.8.0",
+    "node-sass": "^4.13.1",
+    "nodemon": "^1.19.4",
+    "passport": "^0.4.1",
+    "passport-local": "^1.0.0"
   }
 }

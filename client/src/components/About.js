@@ -4,7 +4,7 @@ import './About.scss';
 export default function About() {
   return (
     <div className="About">
-      <h2>About</h2>
+      <h2>À propos</h2>
 
       <p className="About-Para">
       Mes parents m’ont offert mon premier appareil photo numérique en 2005 lorsque j’avais 17 ans. Une véritable révélation. J’ai alors passé toutes mes vacances derrière un viseur. Depuis ce jour, j’ai toujours associé le voyage à la photographie et la photographie au voyage.<br /><br />
