@@ -1,0 +1,65 @@
+.Navbar {
+  padding: 15px 0px;
+  background-color: white;
+
+  // position: fixed;
+  // top: 0;
+  // z-index: 100;
+  // width: 100%;
+  .Navbar_Cont {
+    margin: auto;
+    width: 90%;
+    max-width: 1200px;
+    display: flex;
+    justify-content: space-between;
+  }
+  .Navbar_Left {
+    float: left;
+  }
+  .Navbar_Right {
+    float: right;
+  }
+  .Navbar-Link {
+    margin: 10px 1.5vw;
+    text-decoration: none;
+    color: black;
+    font-size: 14px;
+  }
+  .Link--Bold {
+    font-family: Raleway-Bold;
+  }
+  button {
+    border: none;
+  }
+
+  .Navbar_Right--Mob {
+    display: none;
+  }
+
+}
+
+@media screen and (max-width: 570px) {
+  .Navbar_Right--Mob {
+    display: block!important;
+  }
+  .Navbar_Right--Mob_Menu {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    z-index: 20;
+    width: 100%;
+    padding: 15px 0;
+    background: black;
+    border-top: 1px solid white;
+    transform: translateY(0px);
+    transition: transform 0.8s, opacity 0.8s;
+    opacity: 1;
+  }
+  .Navbar_Right--Mob_Menu--hidden {
+    opacity: 0;
+    transform: translateY(100px);
+  }
+  .Navbar_Right {
+    display: none;
+  }
+}
