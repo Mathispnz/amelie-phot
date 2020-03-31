@@ -15,30 +15,56 @@
   left: 0;
 }
 .Home_Background_Pic {
-  width: 150%;
-  left: -50%;
+  width: 100vw;
+  height: 100vh;
+  margin: auto;
+  display: block;
+  position: relative;
+  object-fit: cover;
+  left: 50%;
+  transform: translateX(-50%);
 }
 .Home_Container {
   top: 50%;
   transform: translateY(-50%);
   margin: auto;
+  border-radius: 50px;
   max-width: 700px;
+  padding: 30px 0;
+  width: 90%;
   position: relative;
   color: white;
   z-index: 100;
+  background: rgba(0, 0, 0, 0.4);
+}
+.Home_Text {
+  width: 90%;
+  margin: auto;
 }
 .Home_Title {
   font-size: 40px;
   font-family: Raleway-Bold;
+  margin-top: 0;
 }
 .Home_Link {
   margin: auto;
   display: block;
   margin-top: 20px;
-  border: 3px solid white;
+  border: 2px solid white;
   border-radius: 3px;
   padding: 5px 40px;
   width: fit-content;
   color: white;
   text-decoration: none;
+}
+.Home_Social {
+  position: absolute;
+  bottom: 10px;
+  z-index: 10;
+  max-width: 30px;
+  left: 50%;
+  transform: translateX(-50%);
+  img {
+    width: 100%;
+  }
 }

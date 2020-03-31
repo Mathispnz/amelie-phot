@@ -37,7 +37,7 @@ export default function Faune() {
             return(
               <div key={key}>
                 <h2>{portrait.name}</h2>
-                <img src={portrait.url} alt="Portrait Picture" />
+                <img src={portrait.url} alt="Portrait" />
                 <h5>{portrait.theme}</h5>
               </div>
             )

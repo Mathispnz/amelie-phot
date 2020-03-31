@@ -16,13 +16,13 @@ export default function Home() {
     <div className="Home">
       <Fade className="Home_Background" {...fadeProperties}>
         <div className="each-fade">
-          <img className="Home_Background_Pic" src="./pictures/picture19.jpg" />
+          <img className="Home_Background_Pic" src="./pictures/home1.jpg" alt="Background home" />
         </div>
         <div className="each-fade">
-          <img className="Home_Background_Pic" src="./pictures/picture9.jpg" />
+          <img className="Home_Background_Pic" src="./pictures/home2.jpg" alt="Background home" />
         </div>
         <div className="each-fade">
-          <img className="Home_Background_Pic" src="./pictures/picture6.jpg" />
+          <img className="Home_Background_Pic" src="./pictures/home3.jpg" alt="Background home" />
         </div>
       </Fade>
 
@@ -36,6 +36,10 @@ export default function Home() {
           <Link className="Home_Link" to="/galerie">Galerie</Link>
         </div>
       </div>
+
+      <a href="https://www.instagram.com/coachingphotovoyage/" target="_blank" rel="noopener noreferrer"><div className="Home_Social">
+        <img src="./pictures/instagram-brands.svg" alt="Instagram" />
+      </div></a>
     </div>
   )
 }

@@ -9,7 +9,8 @@ class Navbar extends Component {
 
     this.state = {
       adminLoggedIn: null,
-      mobMenuOpen: false
+      mobMenuOpen: false,
+      scrollTop: false
     }
     this.service = new AuthService();
   }
@@ -36,33 +37,33 @@ class Navbar extends Component {
   }
 
   render() {
-    const { mobMenuOpen } = this.state;
+    const { mobMenuOpen, scrollTop } = this.state;
 
     if (this.state.adminLoggedIn) {
       return (
         <div className="Navbar">
           <div className="Navbar_Cont">
             <div className="Navbar_Left">
-              <Link className="Navbar-Link Link--Bold" to="/">AMÉLIE PEINGNEZ</Link>
+              <Link className="Navbar-Link Link--Bold Navbar_marginLeft__none" to="/">AMÉLIE PEINGNEZ</Link>
             </div>
+
             <div className="Navbar_Right"> 
               <Link className="Navbar-Link" to="/galerie">Galerie</Link>
-              <Link className="Navbar-Link" to="/destinations">Destinations</Link>
               <Link className="Navbar-Link" to="/about">À propos</Link>
               <Link className="Navbar-Link" to="/contact">Contact</Link>
               <Link className="Navbar-Link" to="/add">Add Pic</Link>
               <Link className="Navbar-Link" to="/logout" onClick={() => this.logoutUser()}>Logout</Link>
             </div>
 
+            {/* RESPONSIVE MENU */}
             <div className="Navbar_Right--Mob"> 
               <button className="Navbar_Right--Mob_Open" onClick={() => this.openMenu()} >X</button>
               <div className={`Navbar_Right--Mob_Menu ${mobMenuOpen ? '' : 'Navbar_Right--Mob_Menu--hidden'}`}>
                 <Link className="Navbar-Link" to="/galerie">Galerie</Link>
-                <Link className="Navbar-Link" to="/destinations">Destinations</Link>
                 <Link className="Navbar-Link" to="/about">À propos</Link>
                 <Link className="Navbar-Link" to="/contact">Contact</Link>
                 <Link className="Navbar-Link" to="/add">Add Pic</Link>
-                <Link className="Navbar-Link" to="/logout" onClick={() => this.logoutUser()}>Logout</Link>
+                <Link className="Navbar-Link Navbar_marginRight__none" to="/logout" onClick={() => this.logoutUser()}>Logout</Link>
               </div>
             </div>
           </div>
@@ -73,23 +74,25 @@ class Navbar extends Component {
         <div className="Navbar">
           <div className="Navbar_Cont">
             <div className="Navbar_Left">
-              <Link className="Navbar-Link Link--Bold" to="/">AMÉLIE PEINGNEZ</Link>
+              <Link className="Navbar-Link Link--Bold Navbar_marginLeft__none" to="/">AMÉLIE PEINGNEZ</Link>
             </div>
             <div className="Navbar_Right"> 
               <Link className="Navbar-Link" to="/galerie">Galerie</Link>
-              <Link className="Navbar-Link" to="/destinations">Destinations</Link>
               <Link className="Navbar-Link" to="/about">À propos</Link>
-              <a href="https://mail.google.com/mail/?view=cm&fs=1&to=amelie.peingnez@gmail.com&su=ContactPhoto" target="_blank">Gmail</a>
-              <Link className="Navbar-Link" to="/contact">Contact</Link>
+              <Link className="Navbar-Link Navbar_marginRight__none" to="/contact">Contact</Link>
             </div>
 
+            {/* RESPONSIVE MENU */}
             <div className="Navbar_Right--Mob"> 
-              <button className="Navbar_Right--Mob_Open" onClick={() => this.openMenu()}>X</button>
+              <div className={`Navbar_Right--Mob_Open ${scrollTop ? 'Navbar_Right__fixed' : '' }`} onClick={() => this.openMenu()}>
+                <div className={`Navbar_Right--Mob_Open_line ${mobMenuOpen ? 'Navbar_Right--Mob_Open_line_open' : ''} `}></div>
+                <div className={`Navbar_Right--Mob_Open_line ${mobMenuOpen ? 'Navbar_Right--Mob_Open_line_open3' : ''} `}></div>
+                <div className={`Navbar_Right--Mob_Open_line ${mobMenuOpen ? 'Navbar_Right--Mob_Open_line_open2' : ''} `}></div>
+              </div>
+
               <div className={`Navbar_Right--Mob_Menu ${mobMenuOpen ? '' : 'Navbar_Right--Mob_Menu--hidden'}`}>
                 <Link className="Navbar-Link" to="/galerie">Galerie</Link>
-                <Link className="Navbar-Link" to="/destinations">Destinations</Link>
                 <Link className="Navbar-Link" to="/about">À propos</Link>
-                <a href="https://mail.google.com/mail/?view=cm&fs=1&to=amelie.peingnez@gmail.com&su=ContactPhoto" target="_blank">Gmail</a>
                 <Link className="Navbar-Link" to="/contact">Contact</Link>
               </div>
             </div>

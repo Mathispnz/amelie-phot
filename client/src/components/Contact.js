@@ -1,36 +1,24 @@
 import React from 'react';
 import './Contact.scss';
+import copy from 'copy-to-clipboard';
+import { toast, ToastContainer } from 'react-toastify';
 
 export default function Contact() {
+  const mail = 'ameliepeingnezphotography@gmail.com';
+  
+  const copyToClip = () => {
+    copy('ameliepeingnezphotography@gmail.com');
+    toast('Copié !', { autoClose: 0, draggable: false });
+  };
 
   return (
     <div className="Contact">
       <h2>Contact</h2>
 
-      <form>
-        <label>
-          Nom:
-          <input type="text" name="name" />
-        </label>
-        <label>
-          Prénom:
-          <input type="text" name="name" />
-        </label>
-        <label>
-          Téléphone:
-          <input type="number" name="name" />
-        </label>
-        <label>
-          Adresse mail:
-          <input type="mail" name="name" />
-        </label>
-        <label>
-          Message:
-          <textarea type="text" name="name" />
-        </label>
-        
-        <button type="submit">Envoyer</button>
-      </form>
+      <p>Pour tout renseignement, veuillez envoyer un e-mail à:</p>
+      <p className="contact_mail" onClick={copyToClip}>{mail} <img style={{width: '20px'}} src="https://icons.iconarchive.com/icons/custom-icon-design/mono-general-2/512/copy-icon.png" /></p>
+
+      <ToastContainer style={{margin: '10px auto'}} />
     </div>
   )
 }
