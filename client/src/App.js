@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import './App.scss';
-import { Router, Switch, Route } from 'react-router-dom';
+import { Switch, Route } from 'react-router-dom';
 
 // Components
 import Navbar from './Navbar';
@@ -23,6 +23,7 @@ import Login from './components/auth/Login';
 import AuthService from './components/auth/auth-service';
 
 class App extends Component {
+
   constructor(props) {
     super(props);
 

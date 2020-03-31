@@ -11,6 +11,12 @@ const photoSchema = new Schema({
   url: {
     type: String
   },
+  location: {
+    type: String
+  },
+  description: {
+    type: String
+  },
   theme: {
     type: String
   }

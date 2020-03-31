@@ -13,4 +13,10 @@
     margin: auto;
     margin-top: 20px;
   }
+  .contact_mail {
+    cursor: pointer;
+  }
+  .contact_mail:hover {
+    text-decoration: underline;
+  }
 }

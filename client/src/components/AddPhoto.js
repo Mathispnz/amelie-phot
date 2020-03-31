@@ -1,21 +1,18 @@
-import React, { useReducer, useEffect } from 'react';
+import React, { useReducer } from 'react';
 import axios from 'axios';
+import { ToastContainer, toast } from 'react-toastify';
+import './AddPhoto.scss';
 
 export default function AddPicture() {
-  // const [picture, setPicture] = useState({
-  //   name: '',
-  //   color: '',
-  //   url: '',
-  //   theme: ''
-  // });
-
   const [picture, setPicture] = useReducer(
     (state, newState) => ({...state, ...newState}),
     {
-    name: '',
-    color: '',
-    url: '',
-    theme: ''
+      name: '',
+      color: '',
+      location: '',
+      description: '',
+      url: '',
+      theme: ''
     }
   );
 
@@ -31,41 +28,48 @@ export default function AddPicture() {
     
     axios.post('http://localhost:5530/api/photos/upload', uploadData)
     .then(response => {
-        console.log(response);
-        setPicture({url: response.data.secure_url})
+        setPicture({url: response.data.secure_url});
+        toast(`La photo a été téléchargée à Cloudinary !`, { autoClose: 3000 });
     })
     .catch(err => {console.log("Error while uploading the file", err)});
   };
 
-  const handleSubmit = event => {
+  const handleSubmit = (event) => {
+    event.preventDefault();
+
     axios.post('http://localhost:5530/api/photos/add', picture)
     .then(res => {
+      toast(`${picture.name} a bien été chargée sur le site !`, { autoClose: 3000 });
       setPicture({
         name: '',
         color: '',
         url: '',
-        theme: ''
-      })
+        theme: '',
+        location: '',
+        description: ''
+      });
     })
     .catch(err => {
       console.log('Error while trying to add a new picture :', err)
     });
   };
 
-  useEffect(() => {
-    handleSubmit();
-  }, []);
-
   return (
     <div className="AddPicture">
+      <ToastContainer autoClose={3000} />
+      
       <form onSubmit={handleSubmit} className="AddPicture_Form">
-        <label>Name: </label>
-        <input type="text" name="name" value={picture.name} onChange={handleChange} />
-        <label>Color: </label>
-        <input type="text" name="color" value={picture.color} onChange={handleChange} />
-        <label>Choose: </label>
-        <input type="file" name="url" onChange={handleFileUpload} />
-        <label>Theme: </label>
+        <label>Nom: </label><br />
+        <input type="text" name="name" value={picture.name} onChange={handleChange} /><br />
+        <label>Couleur: </label><br />
+        <input type="text" name="color" value={picture.color} onChange={handleChange} /><br />
+        <label>Location: </label><br />
+        <input type="text" name="location" value={picture.location} onChange={handleChange} /><br />
+        <label>Description: </label><br />
+        <input type="text" name="description" value={picture.description} onChange={handleChange} /><br />
+        <label>Photo: </label><br />
+        <input type="file" name="url" onChange={handleFileUpload} /><br />
+        <label>Thème: </label><br />
         <select name="theme" value={picture.theme} onChange={handleChange}>
           <option value=""></option>
           <option value="Faune">Faune</option>
@@ -74,8 +78,8 @@ export default function AddPicture() {
           <option value="Mer">Mer</option>
           <option value="Ville">Ville</option>
           <option value="Portrait">Portrait</option>
-        </select>
-        <button>Send</button>
+        </select><br /><br />
+        <button>Envoyer</button>
       </form>
     </div>
   )

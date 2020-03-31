@@ -1,10 +1,12 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import { Fade } from 'react-slideshow-image';
+import './Slider.scss';
+import BackGalerie from './BackGalerie';
 
 const fadeProperties = {
   duration: 3000,
-  transitionDuration: 500,
+  transitionDuration: 800,
   infinite: true,
   indicators: true,
   arrows: true
@@ -28,17 +30,24 @@ export default function Faune() {
   }, []);
 
   return (
-    <div className="Faune">
+    <div className="Faune theme__padding">
+      <BackGalerie />
+
       <h2>Faune</h2>
       
       <div className="containerSlide">
         <Fade {...fadeProperties}>
           {faunes.filter(faune => faune.theme === 'Faune').map((faune, key) => {
             return(
-              <div key={key}>
-                <h2>{faune.name}</h2>
-                <img src={faune.url} alt="Faune Picture" />
-                <h5>{faune.theme}</h5>
+              <div className="containerSlide_slide" key={key}>
+                <img className="containerSlide_img" src={faune.url} alt="Faune" />
+
+                <p className="container_des--size">
+                {faunes.location}
+                </p>
+                <p className="container_description container_des--size">
+                  {faunes.description}
+                </p>
               </div>
             )
           })}

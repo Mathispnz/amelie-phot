@@ -1,8 +1,7 @@
 import React, { Component } from 'react';
-import axios from 'axios';
 import AuthService from './auth-service';
 import './Login.scss';
-import { Link, Redirect } from 'react-router-dom';
+import { Redirect } from 'react-router-dom';
 
 export default class Login extends Component {
   constructor(props) {
@@ -38,7 +37,6 @@ export default class Login extends Component {
   }
 
   render() {
-    console.log(this.state.adminLoggedIn)
     if (this.state.adminLoggedIn) {
       return <Redirect to="/galerie" />
     }
