@@ -67,10 +67,12 @@ app.use('/api/photos', photos);
 app.use('/api/photos', require('./routes/api/file-upload-routes'));
 app.use('/api/auth', require('./routes/api/admin'));
 
-app.use((req, res, next) => {
-  // If no routes match, send them the React HTML.
-  res.sendFile(__dirname + '/public/index.html');
-});
+// app.use((req, res, next) => {
+//   // If no routes match, send them the React HTML.
+//   res.sendFile(__dirname + '/public/index.html');
+// });
+
+app.use('/', express.static(path.join(__dirname, '/public/index.html')));
 
 // Port
 const port = process.env.PORT || 5530;
