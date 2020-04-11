@@ -1,14 +1,14 @@
-import React from 'react';
-import axios from 'axios';
+// import React from 'react';
+// import axios from 'axios';
 
-export default function Signup() {
-  const [user, setUser] = ({
+// export default function Signup() {
+//   const [user, setUser] = ({
     
-  })
+//   })
 
-  return (
-    <div>
+//   return (
+//     <div>
       
-    </div>
-  )
-}
+//     </div>
+//   )
+// }

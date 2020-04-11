@@ -7,12 +7,13 @@
   position: relative;
   max-width: 1200px;
   margin-bottom: 37px;
+  overflow: visible;
 }
 .containerSlide_slide {
   position: relative;
   top: 50%;
   transform: translateY(-50%);
-  overflow: auto;
+  overflow: visible;
 }
 .containerSlide_img {
   margin: auto;

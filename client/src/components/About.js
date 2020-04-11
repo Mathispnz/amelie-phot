@@ -7,7 +7,7 @@ export default function About() {
       <h2>À propos</h2>
 
       <div className="About-Picture_Wrap">
-        <img src="./pictures/profile.jpg" className="About-Picture_Wrap__Img" alt="Profile" />
+        <img src="pictures/profile.jpg" className="About-Picture_Wrap__Img" alt="Profile" />
       </div>
 
       <div className="About-Text">
@@ -20,7 +20,7 @@ export default function About() {
         <p className="About-Qwig">Amélie</p>
 
         <a href="https://www.instagram.com/coachingphotovoyage/" target="_blank" rel="noopener noreferrer"><div className="About-Text_Insta">
-          <img className="About-Text_Insta-img" src="./pictures/instagram-brands.svg" alt="Instagram" />
+          <img className="About-Text_Insta-img" src="pictures/instagram-brands.svg" alt="Instagram" />
         </div></a>
       </div>
 

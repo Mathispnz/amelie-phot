@@ -26,7 +26,7 @@ export default function AddPicture() {
     const uploadData = new FormData();
     uploadData.append('imageUrl', event.target.files[0]);
     
-    axios.post('http://localhost:5530/api/photos/upload', uploadData)
+    axios.post(`${process.env.REACT_APP_API_URL}photos/upload`, uploadData)
     .then(response => {
         setPicture({url: response.data.secure_url});
         toast(`La photo a été téléchargée à Cloudinary !`, { autoClose: 3000 });
@@ -37,7 +37,7 @@ export default function AddPicture() {
   const handleSubmit = (event) => {
     event.preventDefault();
 
-    axios.post('http://localhost:5530/api/photos/add', picture)
+    axios.post(`${process.env.REACT_APP_API_URL}photos/add`, picture)
     .then(res => {
       toast(`${picture.name} a bien été chargée sur le site !`, { autoClose: 3000 });
       setPicture({

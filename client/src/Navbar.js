@@ -57,7 +57,12 @@ class Navbar extends Component {
 
             {/* RESPONSIVE MENU */}
             <div className="Navbar_Right--Mob"> 
-              <button className="Navbar_Right--Mob_Open" onClick={() => this.openMenu()} >X</button>
+            <div className={`Navbar_Right--Mob_Open ${scrollTop ? 'Navbar_Right__fixed' : '' }`} onClick={() => this.openMenu()}>
+                <div className={`Navbar_Right--Mob_Open_line ${mobMenuOpen ? 'Navbar_Right--Mob_Open_line_open' : ''} `}></div>
+                <div className={`Navbar_Right--Mob_Open_line ${mobMenuOpen ? 'Navbar_Right--Mob_Open_line_open3' : ''} `}></div>
+                <div className={`Navbar_Right--Mob_Open_line ${mobMenuOpen ? 'Navbar_Right--Mob_Open_line_open2' : ''} `}></div>
+              </div>
+              
               <div className={`Navbar_Right--Mob_Menu ${mobMenuOpen ? '' : 'Navbar_Right--Mob_Menu--hidden'}`}>
                 <Link className="Navbar-Link" to="/galerie">Galerie</Link>
                 <Link className="Navbar-Link" to="/about">À propos</Link>

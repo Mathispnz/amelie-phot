@@ -11,8 +11,6 @@ import Faune from './components/Faune';
 import Flore from './components/Flore';
 import Terre from './components/Terre';
 import Mer from './components/Mer';
-import Ville from './components/Ville';
-import Portrait from './components/Portrait';
 
 import Destinations from './components/Destinations';
 import About from './components/About';
@@ -64,6 +62,9 @@ class App extends Component {
               <Route path="/contact" component={Contact} />
               <Route path="/add" component={AddPhoto} />
               <Route path="/faune" component={Faune} />
+              <Route path="/flore" component={Flore} />
+              <Route path="/terre" component={Terre} />
+              <Route path="/mer" component={Mer} />
               <Route path="/login" render={() => <Login getUser={this.getTheUser} adminInSession={this.state.adminLoggedIn}/>} />
             </Switch>
       
@@ -85,8 +86,6 @@ class App extends Component {
             <Route path="/flore" component={Flore} />
             <Route path="/terre" component={Terre} />
             <Route path="/mer" component={Mer} />
-            <Route path="/ville" component={Ville} />
-            <Route path="/portrait" component={Portrait} />
             <Route path="/login" render={() => <Login getUser={this.getTheUser}/>} />
           </Switch>
     

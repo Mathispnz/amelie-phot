@@ -10,22 +10,22 @@ export default function Galerie() {
   const [images] = useState(
     [
       {
-        src: './pictures/faune.jpg',
+        src: 'pictures/faune.jpg',
       },
       {
-        src: './pictures/flore.jpg',
+        src: 'pictures/flore.jpg',
       },
       {
-        src: './pictures/terre.jpg',
+        src: 'pictures/terre.jpg',
       },
       {
-        src: './pictures/mer.jpg',
+        src: 'pictures/mer.jpg',
       }
     ]
   )
 
   const getAllPhotos = () => {
-    axios.get('http://localhost:5530/api/photos')
+    axios.get(`${process.env.REACT_APP_API_URL}photos`)
     .then(res => {
       // setImages(res.data);
     })
@@ -68,38 +68,6 @@ export default function Galerie() {
           </div>
         </Link>
       </div>
-
-      {/* <ul>
-        {currentImages.map((image, key) => (
-          <li key={key}>
-            <img alt="galerie-img" className='Galerie-Pic' src={image.src} />
-          </li>
-        ))}
-      </ul> */}
-
-      {/* <nav className="Galerie-pageCont">
-        <ul>
-          {pageNumbers.map(number => (
-            <li key={number}>
-              <a onClick={() => {paginate(number)}} href="#">
-                {number}
-              </a>
-            </li>
-          ))}
-        </ul>
-      </nav> */}
-
-      {/* <div>
-        <h4>Green images</h4>
-        <ul>
-          {images.map((image, key) => (
-            image.color === 'green' && <li key={key}>
-              <img alt="galerie-img" className='Galerie-Pic' src={image.src} />
-            </li>
-          ))}
-        </ul>
-      </div> */}
-
     </div>
   )
 }
