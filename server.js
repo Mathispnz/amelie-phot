@@ -74,14 +74,14 @@ app.use('/api/auth', require('./routes/api/admin'));
 
 
 if (process.env.NODE_ENV === "production") {
-  const root = require('path').join(__dirname, 'client', 'build');
+  const root = require('path').join(__dirname, 'public');
   app.use(express.static(root));
   app.get("*", (req, res) => {
       res.sendFile('index.html', { root });
   });
 }
 
-const root = require('path').join(__dirname, 'app', 'client', 'build');
+const root = require('path').join(__dirname, 'public');
 app.use(express.static(root));
 app.get("*", (req, res) => {
     res.sendFile('index.html', { root });
