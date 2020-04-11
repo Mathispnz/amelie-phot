@@ -69,7 +69,7 @@ app.use('/api/auth', require('./routes/api/admin'));
 
 app.use((req, res, next) => {
   // If no routes match, send them the React HTML.
-  res.sendFile(path.resolve(__dirname + 'client', 'build', 'index.html'));
+  res.sendFile(__dirname + '/client/build/index.html');
 });
 
 // Port
