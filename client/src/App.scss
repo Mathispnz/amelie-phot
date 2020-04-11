@@ -1,0 +1,65 @@
+.App {
+  text-align: center;
+  font-family: 'Raleway';
+  background-color: rgba(200, 200, 200, 0.2);
+}
+
+.BackToMob a {
+  color: black;
+}
+.BackToMob {
+
+}
+.BackToMob_Link {
+  text-decoration: none;
+  color: black;
+  transition: all 0.3s;
+  position: relative;
+  display: inline-block;
+  margin: 0;
+}
+.BackToMob_Link::after {
+  position: absolute;
+  content: "";
+  width: 30%;
+  background: black;
+  height: 1px;
+  bottom: -1px;
+  right: 0;
+  opacity: 0.3;
+  transition: width 0.3s, opacity 0.3s;
+}
+.BackToMob:hover .BackToMob_Link::after  {
+  width: 100%;
+  opacity: 1;
+}
+
+.Footer {
+  background-color: rgba(200, 200, 200, 0.5);
+  padding: 8px 0;
+  font-size: 11px;
+
+  .Footer_Title {
+    margin: 0;
+  }
+  .Footer_Social {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 8px;
+  }
+  .Footer_Social_Line {
+    width: 1px;
+    height: 20px;
+    background: black;
+    margin: 0 10px;
+  }
+  .Footer_Social_IG {
+    display: inline-block;
+    width: 20px;
+  }
+  .Footer_Social_CT {
+    color: black;
+    text-decoration: none;
+  }
+}

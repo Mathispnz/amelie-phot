@@ -1,0 +1,105 @@
+.Navbar {
+  padding: 15px 0px;
+  background-color: white;
+
+  // position: fixed;
+  // top: 0;
+  // z-index: 100;
+  // width: 100%;
+  .Navbar_Cont {
+    margin: auto;
+    width: 90%;
+    max-width: 1200px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .Navbar_Left {
+    float: left;
+  }
+  .Navbar_Right {
+    float: right;
+  }
+  .Navbar-Link {
+    margin: 10px 1.5vw;
+    text-decoration: none;
+    color: black;
+    font-size: 14px;
+  }
+  .Link--Bold {
+    font-family: Raleway-Bold;
+  }
+  button {
+    border: none;
+  }
+
+  .Navbar_Right--Mob {
+    display: none;
+  }
+
+  .Navbar_marginLeft__none {
+    margin-left: 0;
+  }
+  .Navbar_marginRight__none {
+    margin-right: 0;
+  }
+}
+
+@media screen and (max-width: 570px) {
+  .Navbar_Right--Mob {
+    display: block!important;
+  }
+  .Navbar_Right--Mob_Open {
+    position: relative;
+    width:30px;
+    height: 25px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+  }
+  .Navbar_Right__fixed {
+    position: fixed;
+    top: 12px;
+    right: 12px;
+  }
+  .Navbar_Right--Mob_Open_line {
+    position: relative;
+    width: 100%;
+    background: black;
+    height: 1px;
+    transition: 0.3s all;
+  }
+  .Navbar_Right--Mob_Open_line_open {
+    transform: translateY(11.5px) rotate(45deg);
+    height: 2px;
+  }
+  .Navbar_Right--Mob_Open_line_open2 {
+    transform: translateY(-11.5px) rotate(-45deg);
+    height: 2px;
+  }
+  .Navbar_Right--Mob_Open_line_open3 {
+    opacity: 0;
+  }
+  .Navbar_Right--Mob_Menu {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    z-index: 200;
+    width: 100%;
+    padding: 15px 0;
+    background: white;
+    box-shadow: 0 2px 9px 3px #333;
+    transform: translateY(0px);
+    transition: transform 0.8s, opacity 0.8s;
+    opacity: 1;
+  }
+  .Navbar_Right--Mob_Menu--hidden {
+    opacity: 0;
+    transform: translateY(100px);
+  }
+  .Navbar_Right {
+    display: none;
+  }
+}
