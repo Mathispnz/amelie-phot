@@ -4,7 +4,7 @@
   "description": "Server for CRUD pictures",
   "main": "server.js",
   "scripts": {
-    "start": "node server.js",
+    "start": "node ./bin/www",
     "server": "nodemon server.js",
     "client": "npm start --prefix client",
     "dev": "concurrently \"npm run server\" \"npm run client\""
