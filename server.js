@@ -1,7 +1,8 @@
+require('dotenv').config();
+
 const express = require('express');
 const mongoose = require('mongoose');
 const cors = require('cors');
-require('dotenv').config();
 
 const session = require('express-session');
 const passport = require('passport');
@@ -66,6 +67,7 @@ const photos = require('./routes/api/photos');
 app.use('/api/photos', photos);
 app.use('/api/photos', require('./routes/api/file-upload-routes'));
 app.use('/api/auth', require('./routes/api/admin'));
+
 app.use((req, res, next) => {
   // If no routes match, send them the React HTML.
   res.sendFile(__dirname + "/public/index.html");
@@ -77,3 +79,5 @@ const port = process.env.PORT || 5530;
 app.listen(port, () => {
   console.log(`Server started on ${port}`)
 });
+
+module.exports = app;
