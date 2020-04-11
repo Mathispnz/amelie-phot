@@ -5,10 +5,11 @@ import './Slider.scss';
 import BackGalerie from './BackGalerie';
 
 const fadeProperties = {
-  duration: 3000,
-  transitionDuration: 800,
+  duration: 5000,
+  transitionDuration: 1000,
   infinite: true,
   indicators: true,
+  pauseOnHover: true,
   arrows: true
 }
 
@@ -16,7 +17,7 @@ export default function Faune() {
   const [faunes, setFaunes] = useState([]);
 
   const getFaunePictures = () => {
-    axios.get('http://localhost:5530/api/photos')
+    axios.get(`${process.env.REACT_APP_API_URL}photos`)
     .then(res => {
       setFaunes(res.data);
     })
@@ -40,14 +41,14 @@ export default function Faune() {
           {faunes.filter(faune => faune.theme === 'Faune').map((faune, key) => {
             return(
               <div className="containerSlide_slide" key={key}>
-                <img className="containerSlide_img" src={faune.url} alt="Faune" />
+                  <img className="containerSlide_img" src={faune.url} alt="Faune" />
 
-                <p className="container_des--size">
-                {faunes.location}
-                </p>
-                <p className="container_description container_des--size">
-                  {faunes.description}
-                </p>
+                  <p className="container_des--size">
+                  {faune.location}
+                  </p>
+                  <p className="container_description container_des--size">
+                    {faune.description}
+                  </p>
               </div>
             )
           })}

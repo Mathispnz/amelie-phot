@@ -85,7 +85,11 @@
   .Galerie {
     padding: 10px 0 30px;
     .Galerie-Theme {
+      // grid-template-columns: repeat(1, 2fr);
       grid-gap: 10px;
+      // .Galerie-Theme-One {
+      //   height: 30vw;
+      // }
     }
   }
 }

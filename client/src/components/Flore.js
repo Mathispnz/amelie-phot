@@ -5,8 +5,8 @@ import './Slider.scss';
 import BackGalerie from './BackGalerie';
 
 const fadeProperties = {
-  duration: 3000,
-  transitionDuration: 500,
+  duration: 5000,
+  transitionDuration: 1000,
   infinite: true,
   indicators: true,
   arrows: true
@@ -16,7 +16,7 @@ export default function Faune() {
   const [flore, setFlore] = useState([]);
 
   const getFlorePictures = () => {
-    axios.get('http://localhost:5530/api/photos')
+    axios.get(`${process.env.REACT_APP_API_URL}photos`)
     .then(res => {
       setFlore(res.data);
     })

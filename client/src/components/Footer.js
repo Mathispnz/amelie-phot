@@ -8,7 +8,7 @@ export default function Footer() {
 
       <div className="Footer_Social">
         <a className="Footer_Social_IG" href="https://www.instagram.com/coachingphotovoyage/" target="_blank" rel="noopener noreferrer">
-          <img style={{width: "100%", margin: "auto", display:"block"}} src="./pictures/instagram-brands.svg" alt="Instagram" />
+          <img style={{width: "100%", margin: "auto", display:"block"}} src="pictures/instagram-brands.svg" alt="Instagram" />
         </a>
         <div className="Footer_Social_Line"></div>
         <Link to="/contact" className="Footer_Social_CT">Contact</Link>
