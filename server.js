@@ -3,6 +3,7 @@ require('dotenv').config();
 const express = require('express');
 const mongoose = require('mongoose');
 const cors = require('cors');
+const path = require('path');
 
 const session = require('express-session');
 const passport = require('passport');
@@ -18,8 +19,6 @@ app.use(cors({
 }));
 
 // Connect to the database
-const uri = 'mongodb://localhost:27017/gallery';
-
 mongoose.connect(process.env.MONGODB_URI, {useNewUrlParser: true, useUnifiedTopology: true})
 .then(() => console.log('MongoDB connected'))
 .catch(err => console.log(err));
@@ -70,7 +69,7 @@ app.use('/api/auth', require('./routes/api/admin'));
 
 app.use((req, res, next) => {
   // If no routes match, send them the React HTML.
-  res.sendFile(__dirname + "/public/index.html");
+  res.sendFile(path.resolve(__dirname + 'client', 'build', 'index.html'));
 });
 
 // Port
