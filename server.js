@@ -72,14 +72,20 @@ app.use('/api/auth', require('./routes/api/admin'));
 //   res.sendFile(__dirname + '/public/index.html');
 // });
 
-const root = require('path').join(__dirname, 'client', 'build');
 
 if (process.env.NODE_ENV === "production") {
+  const root = require('path').join(__dirname, 'client', 'build');
   app.use(express.static(root));
   app.get("*", (req, res) => {
       res.sendFile('index.html', { root });
   });
 }
+
+const root = require('path').join(__dirname, 'client', 'build');
+app.use(express.static(root));
+app.get("*", (req, res) => {
+    res.sendFile('index.html', { root });
+});
 
 // Port
 const port = process.env.PORT || 5530;

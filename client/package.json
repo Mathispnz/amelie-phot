@@ -1,6 +1,7 @@
 {
   "name": "client",
   "version": "0.1.0",
+  "homepage": "https://amelie-photography.herokuapp.com/",
   "dependencies": {
     "axios": "^0.19.2",
     "copy-to-clipboard": "^3.3.1",
