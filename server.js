@@ -20,7 +20,7 @@ app.use(cors({
 
 // Connect to the database
 mongoose.connect(process.env.MONGODB_URI, {useNewUrlParser: true, useUnifiedTopology: true})
-.then(() => console.log('MongoDB connected'))
+.then(() => console.log(`Connected to Mongo! Database name: "${x.connections[0].name}"`))
 .catch(err => console.log(err));
 
 // Passport
