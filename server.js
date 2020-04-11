@@ -20,7 +20,7 @@ app.use(cors({
 
 // Connect to the database
 mongoose.connect(process.env.MONGODB_URI, {useNewUrlParser: true, useUnifiedTopology: true})
-.then(() => console.log(`Connected to Mongo! Database name: "${x.connections[0].name}"`))
+.then(x => console.log(`Connected to Mongo! Database name: "${x.connections[0].name}"`))
 .catch(err => console.log(err));
 
 // Passport
@@ -72,10 +72,10 @@ app.use('/api/auth', require('./routes/api/admin'));
 //   res.sendFile(__dirname + '/public/index.html');
 // });
 
-app.use(express.static('/public'));
-
-app.get('*', (req, res) => {
-  res.sendFile(path.resolve(__dirname, 'public', 'index.html'))
+const root = require('path').join(__dirname, 'client', 'build')
+app.use(express.static(root));
+app.get("*", (req, res) => {
+    res.sendFile('index.html', { root });
 });
 
 // Port
