@@ -2,7 +2,7 @@
   "name": "amelie-photography-server",
   "version": "1.0.0",
   "description": "Server for CRUD pictures",
-  "main": "app.js",
+  "main": "server.js",
   "scripts": {
     "start": "node server.js",
     "server": "nodemon server.js",
