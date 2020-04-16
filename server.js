@@ -20,9 +20,8 @@ app.use(cors({
 
 // Add headers
 app.use(function (req, res, next) {
-
   // Website you wish to allow to connect
-  res.setHeader('Access-Control-Allow-Origin', 'http://ameliepeingnezphotography.herokuapp.com/');
+  res.setHeader('Access-Control-Allow-Origin', 'http://ameliepeingnezphotography.herokuapp.com');
 
   // Request methods you wish to allow
   res.setHeader('Access-Control-Allow-Methods', 'GET, POST, OPTIONS, PUT, PATCH, DELETE');
