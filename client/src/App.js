@@ -6,6 +6,8 @@ import { Switch, Route } from 'react-router-dom';
 import Navbar from './Navbar';
 import Home from './components/Home';
 import Galerie from './components/Galerie';
+import AllPhotos from './components/AllPhotos';
+import PhotoDetails from './components/PhotoDetails';
 // THEMES
 import Faune from './components/Faune';
 import Flore from './components/Flore';
@@ -21,7 +23,6 @@ import Login from './components/auth/Login';
 import AuthService from './components/auth/auth-service';
 
 class App extends Component {
-
   constructor(props) {
     super(props);
 
@@ -61,6 +62,8 @@ class App extends Component {
               <Route path="/about" component={About} />
               <Route path="/contact" component={Contact} />
               <Route path="/add" component={AddPhoto} />
+              <Route exact path="/photos" component={AllPhotos} />
+              <Route exact path="/photos/:id" component={PhotoDetails} />
               <Route path="/faune" component={Faune} />
               <Route path="/flore" component={Flore} />
               <Route path="/terre" component={Terre} />
@@ -79,7 +82,6 @@ class App extends Component {
           <Switch>
             <Route exact path="/" component={Home} />
             <Route path="/galerie" component={Galerie} />
-            <Route path="/destinations" component={Destinations} />
             <Route path="/about" component={About} />
             <Route path="/contact" component={Contact} />
             <Route path="/faune" component={Faune} />

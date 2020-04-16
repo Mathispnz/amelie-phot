@@ -52,6 +52,7 @@ class Navbar extends Component {
               <Link className="Navbar-Link" to="/about">À propos</Link>
               <Link className="Navbar-Link" to="/contact">Contact</Link>
               <Link className="Navbar-Link" to="/add">Add Pic</Link>
+              <Link className="Navbar-Link" to="/photos">Éditeur</Link>
               <Link className="Navbar-Link" to="/logout" onClick={() => this.logoutUser()}>Logout</Link>
             </div>
 
@@ -68,6 +69,7 @@ class Navbar extends Component {
                 <Link className="Navbar-Link" to="/about">À propos</Link>
                 <Link className="Navbar-Link" to="/contact">Contact</Link>
                 <Link className="Navbar-Link" to="/add">Add Pic</Link>
+                <Link className="Navbar-Link" to="/photos">Éditeur</Link>
                 <Link className="Navbar-Link Navbar_marginRight__none" to="/logout" onClick={() => this.logoutUser()}>Logout</Link>
               </div>
             </div>

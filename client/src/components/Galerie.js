@@ -1,6 +1,5 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import './Galerie.scss';
-import axios from 'axios';
 import { Link } from 'react-router-dom';
 
 // HOOKS FOR MAPPING THROUGH IMAGES
@@ -23,20 +22,6 @@ export default function Galerie() {
       }
     ]
   )
-
-  const getAllPhotos = () => {
-    axios.get(`${process.env.REACT_APP_API_URL}photos`)
-    .then(res => {
-      // setImages(res.data);
-    })
-    .catch(err => (
-      console.log(err)
-    ));
-  }
-
-  useEffect(() => {
-    getAllPhotos();
-  }, [])
 
   return (
     <div className='Galerie'>

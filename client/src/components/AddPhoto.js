@@ -4,6 +4,7 @@ import { ToastContainer, toast } from 'react-toastify';
 import './AddPhoto.scss';
 
 export default function AddPicture() {
+  // Reducer
   const [picture, setPicture] = useReducer(
     (state, newState) => ({...state, ...newState}),
     {
@@ -61,14 +62,19 @@ export default function AddPicture() {
       <form onSubmit={handleSubmit} className="AddPicture_Form">
         <label>Nom: </label><br />
         <input type="text" name="name" value={picture.name} onChange={handleChange} /><br />
+
         <label>Couleur: </label><br />
         <input type="text" name="color" value={picture.color} onChange={handleChange} /><br />
+
         <label>Location: </label><br />
         <input type="text" name="location" value={picture.location} onChange={handleChange} /><br />
+
         <label>Description: </label><br />
         <input type="text" name="description" value={picture.description} onChange={handleChange} /><br />
+
         <label>Photo: </label><br />
         <input type="file" name="url" onChange={handleFileUpload} /><br />
+
         <label>Thème: </label><br />
         <select name="theme" value={picture.theme} onChange={handleChange}>
           <option value=""></option>
@@ -76,9 +82,8 @@ export default function AddPicture() {
           <option value="Flore">Flore</option>
           <option value="Terre">Terre</option>
           <option value="Mer">Mer</option>
-          <option value="Ville">Ville</option>
-          <option value="Portrait">Portrait</option>
         </select><br /><br />
+
         <button>Envoyer</button>
       </form>
     </div>
