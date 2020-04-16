@@ -1,0 +1,25 @@
+.allphotos {
+  margin: auto;
+  max-width: 1200px;
+  width: 90%;
+}
+.allphotos_photo {
+  display: inline-block;
+  margin: 5px;
+  transition: transform 0.3s;
+}
+.allphotos_photo:hover {
+  transform: scale(1.05);
+}
+.allphotos_photo_img {
+  width: 100px;
+}
+
+@media screen and (min-width: 570px) {
+  .allphotos_photo {
+    margin: 10px;
+  }
+  .allphotos_photo_img {
+    width: 120px;
+  }
+}

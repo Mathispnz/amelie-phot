@@ -15,7 +15,7 @@ app.use(express.json());
 // Cors to connect to both Client and Server
 app.use(cors({
   credentials: true,
-  origin: ['http://localhost:3000']
+  origin: ['http://localhost:3000', 'https://amelie-photography.herokuapp.com', 'http://amelie-photography.herokuapp.com/']
 }));
 
 // Connect to the database

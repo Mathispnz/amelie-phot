@@ -1,0 +1,101 @@
+.sglpic {
+  max-width: 1300px;
+  width: 90%;
+  margin: auto;
+  padding: 30px 0;
+
+  .sglpic_pic {
+    .sglpic_pic-des {
+      max-width: 500px;
+      margin: auto;
+    }
+    img {
+      max-width: 250px;
+      max-height: 300px;
+      object-fit: contain;
+      width: 90%;
+    }
+    span {
+      text-decoration: underline;
+    }
+  }
+
+  .sglpic_edit {
+    label {
+      display: inline-block;
+      margin: 20px auto 10px;
+    }
+    .sglpic_edit_label-first {
+      margin-top: 0px;
+    }
+    input {
+      width: 200px;
+      text-align: center;
+    }
+    textarea {
+      width: 250px;
+      max-width: 300px;
+      height: 50px;
+      max-height: 200px;
+    }
+    .sglpic_edit-des {
+      text-align: center;
+    }
+  }
+
+  .sglpic_btn {
+    margin: 10px auto;
+    padding: 10px 20px;
+    border-radius: 3px;
+    display: block;
+    cursor: pointer;
+  }
+
+  .sglpic_confirm {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: rgba(240, 240, 240, 0.9);
+    box-shadow: 0px 0px 3px rgba(100, 100, 100, 0.5);
+    padding: 10px 20px;
+    border-radius: 3px;
+    width: 200px;
+    opacity: 0;
+    transition: opacity 0.3s;
+
+    button {
+      margin: 10px 5px 0 5px;
+      cursor: pointer;
+    }
+  }
+  .sglpic_confirm-show {
+    opacity: 1;
+  }
+}
+
+@media screen and (min-width: 570px) {
+  .sglpic {
+    .sglpic_flex {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    .sglpic_flex
+    hr {
+      display: none;
+    }
+    .sglpic_details, .sglpic_edit {
+      width: 50%;
+    }
+    .sglpic_divide-desk {
+      width: 1px;
+      height: 350px;
+      background: black;
+    }
+    .sglpic_confirm {
+      padding: 30px 50px;
+      width: auto;
+    }
+  }
+}
