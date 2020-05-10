@@ -37,22 +37,22 @@ export default function Faune() {
       <h2>Faune</h2>
       
       <div className="containerSlide">
-        <Fade {...fadeProperties}>
-          {faunes.filter(faune => faune.theme === 'Faune').map((faune, key) => {
-            return(
-              <div className="containerSlide_slide" key={key}>
-                  <img className="containerSlide_img" src={faune.url} alt="Faune" />
+          <Fade {...fadeProperties}>
+            {faunes.filter(faune => faune.theme === 'Faune').map((faune, key) => {
+              return(
+                <div className="containerSlide_slide" key={key}>
+                      <img className="containerSlide_img" src={faune.url} alt="Faune" />
 
-                  <p className="container_des--size">
-                  {faune.location}
-                  </p>
-                  <p className="container_description container_des--size">
-                    {faune.description}
-                  </p>
-              </div>
-            )
-          })}
-        </Fade>
+                      <p className="container_des--size">
+                      {faune.location}
+                      </p>
+                      <p className="container_description container_des--size">
+                        {faune.description}
+                      </p>
+                    </div>
+              )
+            })}
+          </Fade>
       </div>
     </div>
   )
