@@ -52,7 +52,7 @@ async function listDatabases(client){
 main().catch(console.error);
 
 // Connect to the database
-mongoose.connect(process.env.MONGODB_URINO, {useNewUrlParser: true, useUnifiedTopology: true})
+mongoose.connect('mongodb+srv://mathispnz:M4kel0ve@cluster-902ds090.urtdu.mongodb.net/heroku_902ds090?retryWrites=true&w=majority', {useNewUrlParser: true, useUnifiedTopology: true})
 .then(x => console.log(`Connected to Mongo! Database name: "${x.connections[0].name}"`))
 .catch(err => console.log(err));
 
