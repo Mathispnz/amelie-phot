@@ -1,5 +1,4 @@
 require('dotenv').config();
-require('sqreen');
 
 const express = require('express');
 const mongoose = require('mongoose');
@@ -19,8 +18,41 @@ app.use(cors({
   origin: ['http://localhost:3000', 'http://ameliepeingnezphotography.herokuapp.com']
 }));
 
+// Connect to the migrated MongoDB Atlas database
+
+const { MongoClient } = require('mongodb', {useUnifiedTopology: true});
+// const client = new MongoClient(uri);
+
+async function main() {
+  const uri = process.env.MONGODB_URINO;
+
+  const client = new MongoClient(uri, {useUnifiedTopology: true});
+ 
+  try {
+      // Connect to the MongoDB cluster
+      await client.connect();
+
+      // Make the appropriate DB calls
+      await listDatabases(client);
+
+  } catch (e) {
+      console.error(e);
+  } finally {
+      await client.close();
+  }
+}
+
+async function listDatabases(client){
+  databasesList = await client.db().admin().listDatabases();
+
+  console.log("Databases:");
+  databasesList.databases.forEach(db => console.log(` - ${db.name}`));
+};
+
+main().catch(console.error);
+
 // Connect to the database
-mongoose.connect(process.env.MONGODB_URI, {useNewUrlParser: true, useUnifiedTopology: true})
+mongoose.connect(process.env.MONGODB_URINO, {useNewUrlParser: true, useUnifiedTopology: true})
 .then(x => console.log(`Connected to Mongo! Database name: "${x.connections[0].name}"`))
 .catch(err => console.log(err));
 
@@ -72,7 +104,6 @@ app.use('/api/auth', require('./routes/api/admin'));
 //   // If no routes match, send them the React HTML.
 //   res.sendFile(__dirname + '/public/index.html');
 // });
-
 
 if (process.env.NODE_ENV === "production") {
   const root = require('path').join(__dirname, 'public');
