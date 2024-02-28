@@ -18,6 +18,7 @@ app.use(
     credentials: true,
     origin: [
       "http://localhost:3000",
+      "http://amelie-photo-heroku-20-85d23a6e7668.herokuapp.com/",
       "http://ameliepeingnezphotography.herokuapp.com",
     ],
   })
