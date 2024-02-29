@@ -6,11 +6,6 @@ const passport = require('passport');
 
 const Admin = require('../../models/Admin');
 
-const user = new Admin({
-    username: 'APPhotography',
-    password: 'Yenaladedans'
-  });
-
 router.get('/', (req, res, next) => {
     res.send('Route success');
 })

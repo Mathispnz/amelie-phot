@@ -19,14 +19,12 @@ app.use(
     origin: [
       "http://localhost:3000",
       "http://ameliepeingnezphotography.herokuapp.com",
+      "https://ameliepeingnezphotography.herokuapp.com"
     ],
   })
 );
 
 // Connect to the migrated MongoDB Atlas database
-// Encode special characters
-const username = encodeURIComponent(process.env.URI_USERNAME);
-const password = encodeURIComponent(process.env.URI_PASSWORD);
 
 const { MongoClient } = require("mongodb", { useUnifiedTopology: true });
 // const client = new MongoClient(uri);
