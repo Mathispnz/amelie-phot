@@ -1,21 +1,21 @@
 {
   "name": "client",
   "version": "0.1.0",
-  "homepage": "https://amelie-photography.herokuapp.com/",
+  "homepage": "https://ameliepeingnezphotography.herokuapp.com/",
   "dependencies": {
-    "axios": "^0.19.2",
+    "axios": "^1.6.7",
     "copy-to-clipboard": "^3.3.1",
     "google-map-react": "^1.1.5",
-    "node-sass": "^4.13.1",
     "react": "^16.11.0",
     "react-div-100vh": "^0.3.8",
     "react-dom": "^16.11.0",
     "react-router": "^5.1.2",
     "react-router-dom": "^5.1.2",
     "react-router-last-location": "^2.0.1",
-    "react-scripts": "^3.4.0",
+    "react-scripts": "^5.0.1",
     "react-slideshow-image": "^1.3.4",
-    "react-toastify": "^5.5.0"
+    "react-toastify": "^5.5.0",
+    "sass": "^1.71.1"
   },
   "scripts": {
     "start": "react-scripts start",
