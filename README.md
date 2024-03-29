@@ -7,12 +7,12 @@ Site de présentation d'une galerie d'images filtrées par thème et présentée
 
 Stack: HTML5, Sass, ReactJS, NodeJS, ExpressJS, MongoDB.
 
-<img align="left" src="https://github.com/Mathispnz/amelie-phot/assets/38229939/f1896bfe-19eb-4887-86cc-c0e4714ff924" />
-<img align="right" src="https://github.com/Mathispnz/amelie-phot/assets/38229939/869c97ac-e6ce-4035-8e7d-73003e6b80c1" />
+<img width="400" align="left" src="https://github.com/Mathispnz/amelie-phot/assets/38229939/f1896bfe-19eb-4887-86cc-c0e4714ff924" />
+<img width="400" align="right" src="https://github.com/Mathispnz/amelie-phot/assets/38229939/869c97ac-e6ce-4035-8e7d-73003e6b80c1" />
 
-CMS permettant à l'admin via une authentication sur la page [https://ameliepeingnezphotography.herokuapp.com/login] de gérer ses photos: créer, éditer, mettre à jour et supprimer (opérations CRUD).
+CMS permettant à l'admin via une authentication sur la page [https://ameliepeingnezphotography.herokuapp.com/login](url) de gérer ses photos: créer, éditer, mettre à jour et supprimer (opérations CRUD).
 
-<img align="left" src="https://github.com/Mathispnz/amelie-phot/assets/38229939/80ce5e3c-bcd7-41bd-a39f-d0e1015161cd" />
-<img align="right" src="https://github.com/Mathispnz/amelie-phot/assets/38229939/2e7a2c56-b05d-4fdd-9703-b7f40171ddb3" /> 
+<img width="400" align="left" src="https://github.com/Mathispnz/amelie-phot/assets/38229939/80ce5e3c-bcd7-41bd-a39f-d0e1015161cd" />
+<img width="400" align="right" src="https://github.com/Mathispnz/amelie-phot/assets/38229939/2e7a2c56-b05d-4fdd-9703-b7f40171ddb3" /> 
 
-Lien: [https://ameliepeingnezphotography.herokuapp.com/]
+Lien: [https://ameliepeingnezphotography.herokuapp.com/](url)
