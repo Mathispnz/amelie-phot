@@ -17,46 +17,12 @@ app.use(
   cors({
     credentials: true,
     origin: [
-      "http://localhost:3000",
-      "http://ameliepeingnezphotography.herokuapp.com",
-      "https://ameliepeingnezphotography.herokuapp.com"
+      "http://localhost:3000"
     ],
   })
 );
 
 // Connect to the migrated MongoDB Atlas database
-
-const { MongoClient } = require("mongodb", { useUnifiedTopology: true });
-// const client = new MongoClient(uri);
-
-async function main() {
-  // const uri = process.env.MONGODB_URINO;
-  const uri = process.env.URI_GENERAL;
-
-  const client = new MongoClient(uri, { useUnifiedTopology: true });
-
-  try {
-    // Connect to the MongoDB cluster@
-    await client.connect();
-
-    // Make the appropriate DB calls
-    await listDatabases(client);
-  } catch (e) {
-    console.error(e);
-  } finally {
-    await client.close();
-  }
-}
-
-async function listDatabases(client) {
-  databasesList = await client.db().admin().listDatabases();
-
-  console.log("Databases:");
-  databasesList.databases.forEach((db) => console.log(` - ${db.name}`));
-}
-
-main().catch(console.error);
-
 // Connect to the database
 mongoose
   .connect(process.env.URI_MONGOOSE, {
