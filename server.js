@@ -17,7 +17,9 @@ app.use(
   cors({
     credentials: true,
     origin: [
-      "http://localhost:3000"
+      "http://localhost:3000",
+      "https://ameliepeingnezphotography.onrender.com",
+      "https://ameliepeingnezphotographybackend.onrender.com"
     ],
   })
 );
